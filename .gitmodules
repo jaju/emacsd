@@ -1,0 +1,21 @@
+[submodule "slime"]
+	path = vendor/slime
+	url = git://github.com/nablaone/slime.git
+[submodule "clojure"]
+	path = vendor/clojure
+	url = git://github.com/technomancy/clojure-mode.git
+[submodule "vendor/slime"]
+	path = vendor/slime
+	url = git://github.com/nablaone/slime.git
+[submodule "vendor/clojure"]
+	path = vendor/clojure
+	url = git://github.com/technomancy/clojure-mode.git
+[submodule "vendor/ecb"]
+	path = vendor/ecb
+	url = http://github.com/emacsmirror/ecb.git
+[submodule "vendor/cedet"]
+	path = vendor/cedet
+	url = http://github.com/emacsmirror/cedet.git
+[submodule "vendor/sunburst"]
+	path = vendor/sunburst
+	url = git://gist.github.com/61465.git

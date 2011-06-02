@@ -1,0 +1,21 @@
+(require 'color-theme)
+(setq color-theme-is-global t)
+(load-file (concat dotfiles-dir "vendor/sunburst/sunburst.el"))
+(sunburst)
+
+(column-number-mode t)
+(setq mac-allow-anti-aliasing t)
+(show-paren-mode t)
+(setq search-highlight t)
+(setq line-number-mode t)
+(global-font-lock-mode t)
+(follow-mode t)
+(require 'highlight-current-line)
+(highlight-current-line-set-bg-color "#343434")
+
+(defun fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+(global-set-key (kbd "C-M-m") 'fullscreen)
+(fullscreen)
