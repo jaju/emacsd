@@ -11,7 +11,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq overrides)
-(setq subdirs '("goodies" "slime" "clojure" "cedet" "ecb"))
+(setq subdirs '("goodies" "slime" "slime/contrib" "clojure" "cedet" "ecb"))
 (setq list-to-add-to-load-path (mapcar (apply-partially 'concat dotfiles-dir "vendor/") subdirs))
 (nconc load-path list-to-add-to-load-path)
 (nconc exec-path '("~/bin"))
@@ -19,6 +19,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'ecb)
-
 (load "custom/view")
 (load "custom/behavior")
+(load "custom/clojure")
