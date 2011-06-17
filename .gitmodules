@@ -13,3 +13,6 @@
 [submodule "vendor/sunburst"]
 	path = vendor/sunburst
 	url = git://gist.github.com/61465.git
+[submodule "vendor/rinari"]
+	path = vendor/rinari
+	url = https://github.com/eschulte/rinari.git

@@ -22,3 +22,4 @@
 (load "custom/view")
 (load "custom/behavior")
 (load "custom/clojure")
+(load "custom/scala")
