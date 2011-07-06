@@ -18,4 +18,4 @@
   (set-frame-parameter nil 'fullscreen
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 (global-set-key (kbd "C-M-m") 'fullscreen)
-(fullscreen)
+;;(fullscreen)

@@ -23,3 +23,7 @@
 (load "custom/behavior")
 (load "custom/clojure")
 (load "custom/scala")
+
+(set-cursor-color "red")
+(setq transient-mark-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
