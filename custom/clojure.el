@@ -1,3 +1,4 @@
+
 (require 'slime)
 (require 'clojure-mode)
 
@@ -5,3 +6,4 @@
   '(progn (slime-setup '(slime-repl))))
 (setq slime-use-autodoc-mode nil)
 (slime-setup)
+(add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
