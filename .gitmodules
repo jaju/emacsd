@@ -16,3 +16,6 @@
 [submodule "vendor/rinari"]
 	path = vendor/rinari
 	url = https://github.com/eschulte/rinari.git
+[submodule "vendor/emacs-eclim"]
+	path = vendor/emacs-eclim
+	url = https://github.com/senny/emacs-eclim.git
