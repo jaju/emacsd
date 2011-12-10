@@ -5,7 +5,7 @@
 		    (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
-(color-theme-initialize)
+;(color-theme-initialize)
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
 
