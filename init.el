@@ -24,6 +24,7 @@
 (load "custom/clojure")
 (load "custom/scala")
 (load "custom/eclim")
+(load "custom/rinari")
 
 (set-cursor-color "red")
 (setq transient-mark-mode t)
