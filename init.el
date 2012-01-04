@@ -40,8 +40,16 @@
 (setq inhibit-startup-message t)
 
 (show-paren-mode t)
-(tool-bar-mode -1)
+(tool-bar-mode 1)
 (column-number-mode t)
 
-(set-frame-font "Menlo-14")
-(load-theme 'tango)
+(set-frame-font "Menlo-12")
+(load-theme 'wheatgrass)
+
+(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
+                          ("marmalade" . "http://marmalade-repo.org/packages/")))
+
+(add-to-list 'load-path "~/.emacs.d/vendor/autocomp/")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/autocomp/ac-dict")
+(ac-config-default)
