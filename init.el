@@ -5,13 +5,12 @@
 		    (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
-;(color-theme-initialize)
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq overrides)
-(setq subdirs '("goodies" "slime" "slime/contrib" "clojure" "cedet" "ecb" "rinari" "emacs-eclim" "emacs-eclim/vendor"))
+(setq subdirs '("goodies" "slime" "slime/contrib" "clojure" "cedet" "ecb" "rinari" "emacs-eclim" "emacs-eclim/vendor" "color-theme"))
 (setq list-to-add-to-load-path (mapcar (apply-partially 'concat dotfiles-dir "vendor/") subdirs))
 (nconc load-path list-to-add-to-load-path)
 (nconc exec-path '("~/bin"))
@@ -26,7 +25,6 @@
 (load "custom/eclim")
 (load "custom/rinari")
 
-(set-cursor-color "red")
 (setq transient-mark-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq default-abbrev-mode 1)
@@ -43,9 +41,6 @@
 (tool-bar-mode 1)
 (column-number-mode t)
 
-(set-frame-font "Menlo-12")
-(load-theme 'wheatgrass)
-
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
                           ("marmalade" . "http://marmalade-repo.org/packages/")))
 
@@ -53,3 +48,7 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/autocomp/ac-dict")
 (ac-config-default)
+
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)

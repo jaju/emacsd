@@ -1,10 +1,15 @@
-;(require 'color-theme)
-;(setq color-theme-is-global t)
-;(load-file (concat dotfiles-dir "vendor/sunburst/sunburst.el"))
-;(sunburst)
+(require 'color-theme)
+(setq color-theme-is-global t)
 
 (set-frame-font "Menlo-12")
-(load-theme 'tango)
+(set-cursor-color "red")
+
+;;(load "vendor/color-theme/color-theme.el")
+;;(color-theme-initialize)
+;;(load-theme 'tango)
+;;(load-theme 'wheatgrass)
+(load-file (concat dotfiles-dir "vendor/sunburst/sunburst.el"))
+(sunburst)
 
 (column-number-mode t)
 (setq mac-allow-anti-aliasing t)
