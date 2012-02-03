@@ -11,10 +11,10 @@
 (load-file (concat dotfiles-dir "vendor/sunburst/sunburst.el"))
 (sunburst)
 
+(tool-bar-mode 1)
 (column-number-mode t)
 (setq mac-allow-anti-aliasing t)
 (show-paren-mode t)
-(tool-bar-mode -1)
 (column-number-mode t)
 (setq search-highlight t)
 (setq line-number-mode t)

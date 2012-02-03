@@ -10,14 +10,15 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq overrides)
-(setq subdirs '("goodies" "slime" "slime/contrib" "clojure" "cedet" "ecb" "rinari" "emacs-eclim" "emacs-eclim/vendor" "color-theme"))
+(setq subdirs
+      '("goodies" "slime" "slime/contrib" "clojure" "cedet"
+        "ecb" "rinari" "emacs-eclim" "emacs-eclim/vendor"
+        "color-theme" "autocomp" ))
 (setq list-to-add-to-load-path (mapcar (apply-partially 'concat dotfiles-dir "vendor/") subdirs))
 (nconc load-path list-to-add-to-load-path)
-(nconc exec-path '("~/bin"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'ecb)
 (load "custom/view")
 (load "custom/behavior")
 (load "custom/clojure")
@@ -25,30 +26,10 @@
 (load "custom/eclim")
 (load "custom/rinari")
 
-(setq transient-mark-mode t)
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq default-abbrev-mode 1)
+(nconc exec-path '("~/bin"))
+(nconc exec-path "/usr/local/bin")
 
-(push "/usr/local/bin" exec-path)
-
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
-(setq inhibit-startup-message t)
-
-(show-paren-mode t)
-(tool-bar-mode 1)
-(column-number-mode t)
-
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
-                          ("marmalade" . "http://marmalade-repo.org/packages/")))
-
-(add-to-list 'load-path "~/.emacs.d/vendor/autocomp/")
+(require 'ecb)
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/autocomp/ac-dict")
 (ac-config-default)
-
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/autocomp/ac-dict")

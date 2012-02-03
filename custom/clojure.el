@@ -1,4 +1,3 @@
-
 (require 'slime)
 (require 'clojure-mode)
 
