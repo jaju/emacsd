@@ -1,35 +1,49 @@
-;;; With advice from http://www.prism.gatech.edu/~mmoriarity3/random/emacs-setup.html and help from the
-;;; emacs-starter-kit
+;;; With advice from
+;;; http://www.prism.gatech.edu/~mmoriarity3/random/emacs-setup.html
+;;; and help from the emacs-starter-kit
 
-(setq dotfiles-dir (file-name-directory
-		    (or (buffer-file-name) load-file-name)))
-(add-to-list 'load-path dotfiles-dir)
-
-(setq custom-file "~/.emacs-custom.el")
-(load custom-file 'noerror)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq overrides)
-(setq subdirs
-      '("goodies" "slime" "slime/contrib" "clojure" "cedet"
-        "ecb" "rinari" "emacs-eclim" "emacs-eclim/vendor"
-        "color-theme" "autocomp" ))
-(setq list-to-add-to-load-path (mapcar (apply-partially 'concat dotfiles-dir "vendor/") subdirs))
-(nconc load-path list-to-add-to-load-path)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(load "custom/view")
-(load "custom/behavior")
-(load "custom/clojure")
-(load "custom/scala")
-(load "custom/eclim")
-(load "custom/rinari")
+;;; Emacs 24+ only.
 
 (nconc exec-path '("~/bin"))
 (nconc exec-path "/usr/local/bin")
 
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file 'noerror)
+
+(require 'package)
+(add-to-list 'package-archives
+	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar my-packages
+  '(starter-kit
+    starter-kit-lisp
+    clojure-mode
+    clojure-project-mode
+    slime
+    slime-repl)
+  "My default list of required packages at start time.")
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
+(setq vendors
+      '("goodies" "ecb" "autocomp" "color-theme"))
+(setq list-to-add-to-load-path
+      (mapcar (apply-partially 'concat dotfiles-dir "vendor/") vendors))
+(nconc load-path list-to-add-to-load-path)
+
 (require 'ecb)
 (require 'auto-complete-config)
 (ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/autocomp/ac-dict")
+(add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/autocomp/ac-dict"))
+
+(add-to-list 'load-path dotfiles-dir)
+(load "custom/view")
+(load "custom/behavior")
+(load "custom/toggle-earmuffs")
