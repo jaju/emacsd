@@ -21,6 +21,7 @@
 (defvar my-packages
   '(starter-kit
     starter-kit-lisp
+    ecb
     clojure-mode
     clojure-project-mode
     slime
@@ -33,12 +34,11 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (setq vendors
-      '("goodies" "ecb" "autocomp" "color-theme"))
+      '("goodies" "autocomp" "color-theme"))
 (setq list-to-add-to-load-path
       (mapcar (apply-partially 'concat dotfiles-dir "vendor/") vendors))
 (nconc load-path list-to-add-to-load-path)
 
-(require 'ecb)
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/autocomp/ac-dict"))
