@@ -5,7 +5,7 @@
 ;;; Emacs 24+ only.
 
 (nconc exec-path '("~/bin"))
-(nconc exec-path "/usr/local/bin")
+(nconc exec-path '("/usr/local/bin"))
 
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
@@ -25,7 +25,10 @@
     clojure-mode
     clojure-project-mode
     slime
-    slime-repl)
+    slime-repl
+    inf-ruby
+    ruby-block
+    rvm)
   "My default list of required packages at start time.")
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -47,3 +50,5 @@
 (load "custom/view")
 (load "custom/behavior")
 (load "custom/toggle-earmuffs")
+
+;;; Make some space for org-mode!
