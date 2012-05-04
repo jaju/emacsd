@@ -22,12 +22,12 @@
   '(starter-kit
     starter-kit-lisp
     ecb
-    clojure-mode
     clojure-project-mode
-    slime
     slime-repl
     inf-ruby
     ruby-block
+    ;;slime
+    ;;clojure-mode
     rvm)
   "My default list of required packages at start time.")
 (dolist (p my-packages)
@@ -37,7 +37,7 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (setq vendors
-      '("goodies" "autocomp" "color-theme"))
+      '("goodies" "autocomp" "color-theme" "slime" "clojure"))
 (setq list-to-add-to-load-path
       (mapcar (apply-partially 'concat dotfiles-dir "vendor/") vendors))
 (nconc load-path list-to-add-to-load-path)
