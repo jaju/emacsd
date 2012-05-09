@@ -51,4 +51,6 @@
 (load "custom/behavior")
 (load "custom/toggle-earmuffs")
 
+
 ;;; Make some space for org-mode!
+(load "custom/orgmode")
