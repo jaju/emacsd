@@ -3,3 +3,10 @@
 *~
 ac-comphist.dat
 *.elc
+url/
+places
+bookmarks
+elpa/
+.org-id-locations
+.smex-items
+swank/
