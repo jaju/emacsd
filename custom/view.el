@@ -7,7 +7,7 @@
 ;;(load "vendor/color-theme/color-theme.el")
 ;;(color-theme-initialize)
 ;;(load-theme 'tango)
-;;(load-theme 'wheatgrass)
+(load-theme 'wheatgrass)
 (load-file (concat dotfiles-dir "vendor/sunburst/sunburst.el"))
 (sunburst)
 

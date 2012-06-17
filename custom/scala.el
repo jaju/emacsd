@@ -3,6 +3,6 @@
 (require 'scala-mode-auto)
 
 ;; ensime
-(add-to-list 'load-path "~/.local/ensime/elisp")
+(add-to-list 'load-path "~/.j/ensime/elisp")
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
