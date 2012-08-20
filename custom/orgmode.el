@@ -6,5 +6,4 @@
       '("~/.org/agenda"))
 (setq org-log-done t) ;; This sets timestamps on tasks when finished.
 (setq org-startup-indented t)
-
-
+(setq org-src-fontify-natively t)
