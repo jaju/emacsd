@@ -50,6 +50,7 @@
 (load "custom/view")
 (load "custom/behavior")
 (load "custom/toggle-earmuffs")
+(load "custom/scala")
 
 
 ;;; Make some space for org-mode!
