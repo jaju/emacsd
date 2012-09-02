@@ -28,6 +28,7 @@
     ruby-block
     ;;slime
     ;;clojure-mode
+    nrepl
     rvm)
   "My default list of required packages at start time.")
 (dolist (p my-packages)
