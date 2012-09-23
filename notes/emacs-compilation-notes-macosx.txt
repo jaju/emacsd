@@ -1,0 +1,8 @@
+Code (managed by homebrew) can be found at: /Library/Caches/Homebrew/emacs--git
+
+Following two commands need to be run (removing any CC/CXX env-vars from shell-env.)
+
+autogen/copy_autogen
+./configure --prefix=/usr/local/Cellar/emacs/HEAD --without-dbus --enable-locallisppath=/usr/local/share/emacs/site-lisp --infodir=/usr/local/Cellar/emacs/HEAD/share/info/emacs --with-ns --disable-ns-self-contained --with-imagemagick --with-jpeg --with-gif --with-png --with-xft
+
+Emacs.app is created in the nextstep/ directory, which can be moved to /Applications
