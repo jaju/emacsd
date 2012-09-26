@@ -3,6 +3,7 @@
 ;;; and help from the emacs-starter-kit
 
 ;;; Emacs 24+ only.
+;;; Get more stuff to include from: https://github.com/bbatsov/prelude
 
 (nconc exec-path '("~/bin"))
 (nconc exec-path '("/usr/local/bin"))
