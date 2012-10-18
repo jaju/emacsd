@@ -1,7 +1,8 @@
 (require 'color-theme)
 (setq color-theme-is-global t)
 
-(set-frame-font "Menlo-12")
+(if (eq system-type 'darwin)
+  (set-frame-font "Menlo-12"))
 (set-cursor-color "red")
 
 ;;(load "vendor/color-theme/color-theme.el")
