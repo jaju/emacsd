@@ -25,11 +25,8 @@
     starter-kit-lisp
     ecb
     clojure-project-mode
-    slime-repl
     inf-ruby
     ruby-block
-    ;;slime
-    ;;clojure-mode
     nrepl
     rvm)
   "My default list of required packages at start time.")
