@@ -19,3 +19,6 @@
 [submodule "vendor/emacs-eclim"]
 	path = vendor/emacs-eclim
 	url = https://github.com/senny/emacs-eclim.git
+[submodule "vendor/midje-mode"]
+	path = vendor/midje-mode
+	url = git://github.com/dnaumov/midje-mode.git

@@ -3,7 +3,8 @@
 ;;; and help from the emacs-starter-kit
 
 ;;; Emacs 24+ only.
-;;; Get more stuff to include from: https://github.com/bbatsov/prelude
+;;; Get more stuff to include from:
+;;; https://github.com/bbatsov/prelude, and https://github.com/bodil/emacs.d.git
 
 (nconc exec-path '("~/bin"))
 (nconc exec-path '("/usr/local/bin"))
@@ -39,7 +40,7 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (setq vendors
-      '("goodies" "autocomp" "color-theme" "slime" "clojure"))
+      '("goodies" "autocomp" "color-theme" "slime" "clojure" "midje-mode"))
 (setq list-to-add-to-load-path
       (mapcar (apply-partially 'concat dotfiles-dir "vendor/") vendors))
 (nconc load-path list-to-add-to-load-path)
@@ -57,3 +58,8 @@
 
 ;;; Make some space for org-mode!
 (load "custom/orgmode")
+(setq nrepl-popup-stacktraces nil)
+(add-to-list 'same-window-buffer-names "*nrepl*")
+
+(require 'midje-mode)
+(require 'clojure-jump-to-file)
