@@ -13,6 +13,7 @@
 (load custom-file 'noerror)
 
 (require 'package)
+(require 'hippie-exp)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
