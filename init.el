@@ -29,6 +29,7 @@
     inf-ruby
     ruby-block
     nrepl
+    ac-nrepl
     rvm)
   "My default list of required packages at start time.")
 (dolist (p my-packages)
@@ -56,8 +57,5 @@
 
 ;;; Make some space for org-mode!
 (load "custom/orgmode")
-(setq nrepl-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names "*nrepl*")
 
-(require 'midje-mode)
-(require 'clojure-jump-to-file)
+
