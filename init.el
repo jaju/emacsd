@@ -6,8 +6,10 @@
 ;;; Get more stuff to include from:
 ;;; https://github.com/bbatsov/prelude, and https://github.com/bodil/emacs.d.git
 
-(nconc exec-path '("~/bin"))
-(nconc exec-path '("/usr/local/bin"))
+(defvar more-paths
+  '("~/bin" "/usr/local/bin"))
+(dolist (p more-paths)
+  (nconc exec-path p))
 
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
@@ -49,13 +51,13 @@
 (add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/autocomp/ac-dict"))
 
 (add-to-list 'load-path dotfiles-dir)
-(load "custom/view")
-(load "custom/behavior")
-(load "custom/toggle-earmuffs")
-(load "custom/scala")
-
-
-;;; Make some space for org-mode!
-(load "custom/orgmode")
-
+(defvar custom-config-files
+  '("view"
+    "behavior"
+    "clojure"
+    "toggle-earmuffs"
+    "scala"
+    "orgmode"))
+(dolist (ccf custom-config-files)
+  (load (concat "custom/" ccf)))
 
