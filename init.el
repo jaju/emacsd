@@ -24,14 +24,16 @@
   (package-refresh-contents))
 
 (defvar my-packages
-  '(;starter-kit
-    ;starter-kit-lisp
+  '(starter-kit
+    starter-kit-lisp
     ecb
     clojure-project-mode
+    paredit
     inf-ruby
     ruby-block
     nrepl
-    ac-nrepl)
+    ac-nrepl
+    scala-mode)
   "My default list of required packages at start time.")
 (dolist (p my-packages)
   (when (not (package-installed-p p))

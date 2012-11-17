@@ -1,5 +1,5 @@
 ;; scala-aah!
-(add-to-list 'load-path "~/svn-git/scala-tool-support/src/emacs")
+;(add-to-list 'load-path "~/svn-git/scala-tool-support/src/emacs")
 (require 'scala-mode-auto)
 
 ;; ensime
