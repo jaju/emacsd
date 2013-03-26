@@ -6,49 +6,23 @@
 ;;; Get more stuff to include from:
 ;;; https://github.com/bbatsov/prelude, and https://github.com/bodil/emacs.d.git
 
+;; Setup paths up front so that we can use stuff installed on the system
+
 (defvar more-paths
   '("~/bin" "/usr/local/bin"))
 (dolist (p more-paths)
   (nconc exec-path p))
 
+(setq dotfiles-dir (file-name-directory
+                    (or (buffer-file-name) load-file-name)))
+
+;; Custom settings via the M-x customize* command
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
 
-(require 'package)
-(require 'hippie-exp)
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-(defvar my-packages
-  '(starter-kit
-    starter-kit-lisp
-    ecb
-    clojure-project-mode
-    paredit
-    inf-ruby
-    ruby-block
-    nrepl
-    nrepl-ritz
-    ac-nrepl
-    scala-mode)
-  "My default list of required packages at start time.")
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
-(setq vendors
-      '("goodies" "autocomp" "color-theme" "clojure" "midje-mode")) ;; "slime"
-(setq list-to-add-to-load-path
-      (mapcar (apply-partially 'concat dotfiles-dir "vendor/") vendors))
-(nconc load-path list-to-add-to-load-path)
+;; Load the custom packages file, and the vendors
+(load (concat dotfiles-dir "packages.el") 'noerror)
+(load (concat dotfiles-dir "vendor/vendors.el") 'noerror)
 
 (require 'auto-complete-config)
 (ac-config-default)
