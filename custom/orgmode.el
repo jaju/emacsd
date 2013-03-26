@@ -12,3 +12,4 @@
       '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 (setq org-default-notes-file "~/.org/on-the-fly-notes.org")
 (define-key global-map "\C-cc" 'org-capture)
+(define-key global-map "\C-cr" 'remember)

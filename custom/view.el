@@ -3,14 +3,12 @@
 
 (if (eq system-type 'darwin)
   (set-frame-font "Menlo-12"))
-(set-cursor-color "red")
 
 ;;(load "vendor/color-theme/color-theme.el")
 ;;(color-theme-initialize)
-;;(load-theme 'tango)
-(load-theme 'wheatgrass)
 (load-file (concat dotfiles-dir "vendor/sunburst/sunburst.el"))
 (sunburst)
+(set-cursor-color "red")
 
 (tool-bar-mode 1)
 (column-number-mode t)
@@ -21,8 +19,6 @@
 (setq line-number-mode t)
 (global-font-lock-mode t)
 (follow-mode t)
-;(require 'highlight-current-line)
-;(highlight-current-line-set-bg-color "#343434")
 
 (defun fullscreen ()
   (interactive)

@@ -18,6 +18,8 @@
 (require 'hippie-exp)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -32,6 +34,7 @@
     inf-ruby
     ruby-block
     nrepl
+    nrepl-ritz
     ac-nrepl
     scala-mode)
   "My default list of required packages at start time.")
@@ -42,7 +45,7 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (setq vendors
-      '("goodies" "autocomp" "color-theme" "slime" "clojure" "midje-mode"))
+      '("goodies" "autocomp" "color-theme" "clojure" "midje-mode")) ;; "slime"
 (setq list-to-add-to-load-path
       (mapcar (apply-partially 'concat dotfiles-dir "vendor/") vendors))
 (nconc load-path list-to-add-to-load-path)
