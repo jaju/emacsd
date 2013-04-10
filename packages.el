@@ -17,7 +17,8 @@
     ruby-block
     nrepl
     ac-nrepl
-    scala-mode)
+    scala-mode
+    slamhound)
   "My default list of required packages at start time.")
 (dolist (p my-packages)
   (when (not (package-installed-p p))
