@@ -36,6 +36,7 @@
     "clojure"
     "toggle-earmuffs"
     "scala"
-    "orgmode"))
+    "orgmode"
+    "keybindings"))
 (dolist (ccf custom-config-files)
   (load (concat "custom/" ccf)))
