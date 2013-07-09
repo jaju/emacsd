@@ -40,3 +40,18 @@
     "keybindings"))
 (dolist (ccf custom-config-files)
   (load (concat "custom/" ccf)))
+
+(setq abbrev-file-name
+      (concat dotfiles-dir "custom/abbrevs.el"))
+(setq save-abbrevs t)
+(if (file-exists-p abbrev-file-name)
+    (quietly-read-abbrev-file))
+(add-hook 'org-mode-hook (lambda () (abbrev-mode 1)))
+(add-hook 'text-mode-hook (lambda () (abbrev-mode 1)))
+
+(load (concat dotfiles-dir "ox-reveal.el"))
+(require 'ox-reveal)
+
+(custom-set-variables
+ '(speedbar-show-unknown-files t)
+)
