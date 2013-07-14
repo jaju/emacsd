@@ -1,5 +1,5 @@
 (set-frame-font "Menlo-10")
-(set-frame-font "Menlo-18")
+(set-frame-font "Menlo-20")
 (require 'org)
 
 (setq ispell-program-name "/usr/local/bin/aspell")
