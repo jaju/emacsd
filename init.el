@@ -22,14 +22,13 @@
 (load custom-file 'noerror)
 
 ;; Load the custom packages file, and the vendors
-(load (concat dotfiles-dir "packages.el") 'noerror)
-(load (concat dotfiles-dir "vendor/vendors.el") 'noerror)
+(load "packages.el" 'noerror)
+(load "vendor/vendors.el" 'noerror)
 
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/autocomp/ac-dict"))
 
-(add-to-list 'load-path dotfiles-dir)
 (defvar custom-config-files
   '("view"
     "behavior"
