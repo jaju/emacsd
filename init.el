@@ -34,7 +34,6 @@
     "behavior"
     "clojure"
     "toggle-earmuffs"
-    "scala"
     "orgmode"
     "keybindings"))
 (dolist (ccf custom-config-files)

@@ -14,8 +14,6 @@
     clojure-project-mode
     slamhound
     paredit
-    inf-ruby
-    ruby-block
     nrepl
     ac-nrepl
     )
