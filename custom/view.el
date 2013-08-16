@@ -2,7 +2,7 @@
 (setq color-theme-is-global t)
 
 (if (eq system-type 'darwin)
-  (set-frame-font "Menlo-12"))
+  (set-frame-font "Menlo-10"))
 
 ;;(load "vendor/color-theme/color-theme.el")
 ;;(color-theme-initialize)

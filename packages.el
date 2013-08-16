@@ -14,6 +14,7 @@
     clojure-project-mode
     slamhound
     paredit
+    auto-complete
     nrepl
     ac-nrepl
     )
