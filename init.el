@@ -51,5 +51,4 @@
 (require 'ox-reveal)
 
 (custom-set-variables
- '(speedbar-show-unknown-files t)
-)
+ '(speedbar-show-unknown-files t))

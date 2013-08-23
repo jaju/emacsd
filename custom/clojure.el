@@ -5,8 +5,6 @@
 (setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
 ;(clojure-enable-slime-on-existing-buffers)
 
-(require 'clojure-jump-to-file)
-
 (setq nrepl-popup-stacktraces nil)
 (add-to-list 'same-window-buffer-names "*nrepl*")
 
