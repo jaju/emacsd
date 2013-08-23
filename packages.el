@@ -19,6 +19,7 @@
     ac-nrepl
     )
   "My default list of required packages at start time.")
+
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
