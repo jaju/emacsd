@@ -14,6 +14,28 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
 
+;; Hack? To switch to your wanted ns.
+;; from - https://github.com/clojure-emacs/nrepl.el/issues/316
+(add-hook 'nrepl-connected-hook 
+          (lambda () (nrepl-set-ns (plist-get
+                               (nrepl-send-string-sync "(symbol (str *ns*))") :value))))
+
+(eval-after-load 'clojure-mode
+  '(font-lock-add-keywords
+    'clojure-mode `(("(\\(fn\\)[\[[:space:]]"
+                     (0 (progn (compose-region (match-beginning 1)
+                                               (match-end 1) "λ")
+                               nil)))
+                    ("\\(#\\)("
+                     (0 (progn (compose-region (match-beginning 1)
+                                               (match-end 1) "ƒ")
+                               nil)))
+                    ("\\(#\\){"
+                     (0 (progn (compose-region (match-beginning 1)
+                                               (match-end 1) "∈")
+                               nil))))))
+
+
 (define-skeleton skeleton-clojure-project
   "Create a skeleton clojure project.clj"
   "Name of project: "
