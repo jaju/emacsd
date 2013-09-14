@@ -8,22 +8,21 @@
 
 ;; Setup paths up front so that we can use stuff installed on the system
 
-(defvar more-paths
-  '("~/bin" "/usr/local/bin"))
-(dolist (p more-paths)
-  (nconc exec-path p))
-
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
+(setq dotfiles-dir
+      (file-name-directory
+       (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
+
+(dolist (p '("~/bin" "/usr/local/bin"))
+  (nconc exec-path p))
 
 ;; Custom settings via the M-x customize* command
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file 'noerror)
 
 ;; Load the custom packages file, and the vendors
-(load "packages.el" 'noerror)
 (load "vendor/vendors.el" 'noerror)
+(load "packages.el" 'noerror)
 
 (require 'auto-complete-config)
 (ac-config-default)

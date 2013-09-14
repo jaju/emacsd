@@ -35,7 +35,6 @@
                                                (match-end 1) "∈")
                                nil))))))
 
-
 (define-skeleton skeleton-clojure-project
   "Create a skeleton clojure project.clj"
   "Name of project: "

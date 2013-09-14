@@ -11,12 +11,12 @@
   '(
     starter-kit
     starter-kit-lisp
-    clojure-project-mode
-    slamhound
     paredit
     auto-complete
+    clojure-mode
     nrepl
     ac-nrepl
+    zenburn-theme
     )
   "My default list of required packages at start time.")
 
